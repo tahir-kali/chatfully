@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 
                  enabledBorder: UnderlineInputBorder(      
     borderSide: BorderSide(color: Colors.white,
-    width: 2
+    width: 1
     
     ),   
   ),  
@@ -51,6 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 hintText: "Username",
                 
                                  focusedBorder: InputBorder.none,
+                                 
 
                 hintStyle: GoogleFonts.lato(
                   fontWeight: FontWeight.w400,
@@ -69,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                  enabledBorder: UnderlineInputBorder(      
     borderSide: BorderSide(color: Colors.white,
-    width: 2
+    width: 1
     
     ),   
   ),  
