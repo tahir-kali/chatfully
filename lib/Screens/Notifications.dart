@@ -83,26 +83,26 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
             children: <Widget>[
 
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal* 5.5),
+                padding: EdgeInsets.symmetric(horizontal: SizeConfig.blockSizeHorizontal* 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
 
                     Expanded(
-                      flex: 2,
+                     
                       child: Text("Day(s)", style: GoogleFonts.lato(
                         fontWeight: FontWeight.w800
                       ),),
                     ),
                     Expanded(
-                                            flex: 2,
+                                            
 
                                         child: Text("From", style: GoogleFonts.lato(
                         fontWeight: FontWeight.w800
                       ),),
                     ),
                     Expanded(
-                      flex: 2,
+                      
                                         child: Text("To",
                                         textAlign: TextAlign.left,
                                          style: GoogleFonts.lato(
@@ -127,6 +127,9 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                           ),
                         height: SizeConfig.blockSizeVertical * 4,
                         child: new DropdownButton<String>(
+                           underline: SizedBox(),
+
+                          
                           dropdownColor: Colors.white,
                           focusColor: Colors.white,
                           value: "Weekdays",
@@ -141,6 +144,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                             "Weekdays"
                           ].map((String value) {
                             return new DropdownMenuItem<String>(
+                              
 
                               value: value,
                               child:  Text(value, style: GoogleFonts.lato(
@@ -162,6 +166,8 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                           ),
                           height: SizeConfig.blockSizeVertical * 4,
                           child: new DropdownButton<String>(
+                                                       underline: SizedBox(),
+
                             dropdownColor: Colors.white,
                             focusColor: Colors.white,
                             value: "1:00 PM",
@@ -174,6 +180,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                               
                             ].map((String value) {
                               return new DropdownMenuItem<String>(
+                                
 
                                 value: value,
                                 child:  Text(value, style: GoogleFonts.lato(
@@ -196,6 +203,8 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                           ),
                           height: SizeConfig.blockSizeVertical * 4,
                           child: new DropdownButton<String>(
+                                                       underline: SizedBox(),
+
                             dropdownColor: Colors.white,
                             focusColor: Colors.white,
                              value: "1:00 PM",
@@ -227,7 +236,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 18),
+                padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 7),
                 child: Row(
                   children: <Widget>[
                     Container(
@@ -284,6 +293,9 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                           ),
                         height: SizeConfig.blockSizeVertical * 4,
                         child: new DropdownButton<String>(
+                           underline: SizedBox(),
+
+                          
                           dropdownColor: Colors.white,
                           focusColor: Colors.white,
                           value: "Weekdays",
@@ -298,6 +310,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                             "Weekdays"
                           ].map((String value) {
                             return new DropdownMenuItem<String>(
+                              
 
                               value: value,
                               child:  Text(value, style: GoogleFonts.lato(
@@ -319,6 +332,8 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                           ),
                           height: SizeConfig.blockSizeVertical * 4,
                           child: new DropdownButton<String>(
+                                                       underline: SizedBox(),
+
                             dropdownColor: Colors.white,
                             focusColor: Colors.white,
                             value: "1:00 PM",
@@ -331,6 +346,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                               
                             ].map((String value) {
                               return new DropdownMenuItem<String>(
+                                
 
                                 value: value,
                                 child:  Text(value, style: GoogleFonts.lato(
@@ -353,6 +369,8 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                           ),
                           height: SizeConfig.blockSizeVertical * 4,
                           child: new DropdownButton<String>(
+                                                       underline: SizedBox(),
+
                             dropdownColor: Colors.white,
                             focusColor: Colors.white,
                              value: "1:00 PM",
@@ -384,7 +402,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 18),
+                padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 7),
                 child: Row(
                   children: <Widget>[
                     Container(
@@ -423,6 +441,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
               ),
             ],
           ),
+            
           
 
           Padding(

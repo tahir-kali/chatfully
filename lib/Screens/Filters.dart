@@ -37,7 +37,7 @@ class _FiltersState extends State<Filters> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: Container(
-              height: SizeConfig.blockSizeVertical * 5.5,
+              height: SizeConfig.blockSizeVertical * 5.8,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(8),
@@ -74,7 +74,7 @@ class _FiltersState extends State<Filters> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: Container(
-              height: SizeConfig.blockSizeVertical * 5.5,
+              height: SizeConfig.blockSizeVertical * 5.8,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(8),
@@ -84,7 +84,7 @@ class _FiltersState extends State<Filters> {
                 child: Column(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.all(5),
+                      padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 0.5),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -106,7 +106,7 @@ class _FiltersState extends State<Filters> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15,vertical: 5),
             child: Container(
-              height: SizeConfig.blockSizeVertical * 5.5,
+              height: SizeConfig.blockSizeVertical * 5.8,
               decoration: BoxDecoration(
                 color: Color(0xff434343),
                 borderRadius: BorderRadius.circular(8),
@@ -116,7 +116,7 @@ class _FiltersState extends State<Filters> {
                 child: Column(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.all(5),
+                      padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 0.5),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -137,7 +137,7 @@ class _FiltersState extends State<Filters> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15,vertical: 5),
             child: Container(
-              height: SizeConfig.blockSizeVertical * 5.5,
+              height: SizeConfig.blockSizeVertical * 5.8,
               decoration: BoxDecoration(
                 color: Color(0xff434343),
                 borderRadius: BorderRadius.circular(8),
@@ -147,7 +147,7 @@ class _FiltersState extends State<Filters> {
                 child: Column(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.all(5),
+                      padding:EdgeInsets.only(top: SizeConfig.blockSizeVertical * 0.5),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -168,7 +168,7 @@ class _FiltersState extends State<Filters> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15,vertical: 5),
             child: Container(
-              height: SizeConfig.blockSizeVertical * 5.5,
+              height: SizeConfig.blockSizeVertical * 5.8,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(8),
@@ -177,22 +177,20 @@ class _FiltersState extends State<Filters> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: <Widget>[
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: <Widget>[
-                            Center(
-                              child: Text(
-                                "Customer Success",
-                                style: GoogleFonts.lato(
-                                    fontWeight: FontWeight.w500, fontSize: 16, color: Color(0xff676767)),
-                              ),
+                    Padding(
+                      padding: EdgeInsets.only(top: SizeConfig.blockSizeVertical * 0.5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Center(
+                            child: Text(
+                              "Customer Success",
+                              style: GoogleFonts.lato(
+                                  fontWeight: FontWeight.w500, fontSize: 16, color: Color(0xff676767)),
                             ),
-                           
-                          ],
-                        ),
+                          ),
+                         
+                        ],
                       ),
                     ),
                   ],

@@ -1,3 +1,4 @@
+import 'package:chatfully/Screens/ChatPerson.dart';
 import 'package:chatfully/Screens/Filters.dart';
 import 'package:chatfully/Screens/Notifications.dart';
 import 'package:flutter/material.dart';
@@ -136,7 +137,18 @@ class _ChatScreenState extends State<ChatScreen> {
             endIndent: 15,
             indent: 15,
           ),
-          Chatin(),
+          GestureDetector
+          (
+            onTap: (){
+                        Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => Message()),
+  );
+
+            },
+            
+            
+            child: Chatin()),
           Chatin(),
           Chatin(),
           Chatin(),

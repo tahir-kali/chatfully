@@ -1,3 +1,4 @@
+import 'package:chatfully/size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -94,7 +95,7 @@ class _MessageState extends State<Message> {
                     elevation: 5.0,
                     clipBehavior: Clip.antiAlias,
                     child: Container(
-                      width: 325,
+                      width: SizeConfig.blockSizeVertical * 41,
                       height: 50,
                       color: Colors.white,
                       child: Padding(
