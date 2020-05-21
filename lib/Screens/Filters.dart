@@ -83,16 +83,20 @@ class _FiltersState extends State<Filters> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          "Partnerships",
-                          style: GoogleFonts.lato(
-                              fontWeight: FontWeight.w500, fontSize: 16, color: Color(0xff676767)),
-                        ),
-                       
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Partnerships",
+                            style: GoogleFonts.lato(
+                                fontWeight: FontWeight.w500, fontSize: 16, color: Color(0xff676767)),
+                          ),
+                         
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -111,16 +115,19 @@ class _FiltersState extends State<Filters> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          "Marketing",
-                          style: GoogleFonts.lato(
-                              fontWeight: FontWeight.w500, fontSize: 16, color: Colors.white),
-                        ),
-                       
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            "Marketing",
+                            style: GoogleFonts.lato(
+                                fontWeight: FontWeight.w500, fontSize: 16, color: Colors.white),
+                          ),
+                         
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -139,16 +146,19 @@ class _FiltersState extends State<Filters> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text(
-                          "Sales",
-                          style: GoogleFonts.lato(
-                              fontWeight: FontWeight.w500, fontSize: 16, color: Colors.white),
-                        ),
-                       
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text(
+                            "Sales",
+                            style: GoogleFonts.lato(
+                                fontWeight: FontWeight.w500, fontSize: 16, color: Colors.white),
+                          ),
+                         
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -168,18 +178,21 @@ class _FiltersState extends State<Filters> {
                 child: Column(
                   children: <Widget>[
                     Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Center(
-                            child: Text(
-                              "Customer Success",
-                              style: GoogleFonts.lato(
-                                  fontWeight: FontWeight.w500, fontSize: 16, color: Color(0xff676767)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Center(
+                              child: Text(
+                                "Customer Success",
+                                style: GoogleFonts.lato(
+                                    fontWeight: FontWeight.w500, fontSize: 16, color: Color(0xff676767)),
+                              ),
                             ),
-                          ),
-                         
-                        ],
+                           
+                          ],
+                        ),
                       ),
                     ),
                   ],
