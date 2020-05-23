@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../colors.dart';
 
-
 class NewMessage extends StatefulWidget {
   @override
   _NewMessageState createState() => _NewMessageState();
@@ -14,12 +13,12 @@ class NewMessage extends StatefulWidget {
 class _NewMessageState extends State<NewMessage> {
   @override
   Widget build(BuildContext context) {
-        SizeConfig().init(context);
+    SizeConfig().init(context);
 
     return Scaffold(
-      backgroundColor: Color(0xffDDE5E5),
-        appBar: AppBar(
-          actions: <Widget>[
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        actions: <Widget>[
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: CircleAvatar(
@@ -35,107 +34,176 @@ class _NewMessageState extends State<NewMessage> {
           )
         ],
         title: Text(
-          "New Message",
+          "All People",
           style: GoogleFonts.lato(color: Colors.white),
         ),
         backgroundColor: appColor,
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView(
+          children: <Widget>[
 
-      body: ListView(
-        children: <Widget>[
-
-          Padding(
-            padding: const EdgeInsets.all(15),
-            child: Text("From", style: GoogleFonts.lato(
-              fontWeight: FontWeight.w500,
-              fontSize: 18
-            ),),
-          ),
-
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 15
-            ),
-            child: Container(
-              height: SizeConfig.blockSizeVertical * 9,
-
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
-
-
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      
-                      children: <Widget>[
-
-                        Text("Main Phone Number", style: GoogleFonts.lato(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16
-                        ),),
-                        Icon(Icons.arrow_drop_down)
-
-
-
-                      ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: SizeConfig.blockSizeVertical  * 7 ,
+                child: Material(
+                  borderRadius: BorderRadius.circular(10),
+                  elevation: 15,
+                  clipBehavior: Clip.antiAlias,
+                  child: Container(
+                    width: SizeConfig.blockSizeHorizontal * 74,
+                    height: 50,
+                    color: Colors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          icon: Icon(FontAwesomeIcons.search),
+                          border: InputBorder.none,
+                        ),
+                      ),
                     ),
-                    Row(
-                      children: <Widget>[
-                        Text("+1 (800) 555-4444", style: GoogleFonts.lato(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16
-                            ),),
-                      ],
-                    )
-
-                    
-                  ],
+                  ),
+                  
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(15),
-            child: Text("To", style: GoogleFonts.lato(
-              fontWeight: FontWeight.w500,
-              fontSize: 18
-            ),),
-          ),
-
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 15
-            ),
-            child: Container(
-              height: SizeConfig.blockSizeVertical * 7.5,
-
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8),
 
 
-              ),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8)
-                  )
-                ),
-
+          
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: SizeConfig.blockSizeHorizontal * 5),
+              child: Text(
+                "A",
+                style: TextStyle(color: Colors.grey),
               ),
             ),
-          )
-
-
-
-        ],
+            ListTile(
+              leading: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  CircleAvatar(
+                    radius: 22,
+                  ),
+                  Icon(
+                    FontAwesomeIcons.solidCircle,
+                    color: Colors.green,
+                    size: 15,
+                  ),
+                ],
+              ),
+              title: Text(
+                "Abel Carrasco",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text("abel.carrasoco.5070"),
+              trailing: Icon(
+                FontAwesomeIcons.exclamationCircle,
+                color: Colors.black,
+              ),
+            ),
+            ListTile(
+              leading: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  CircleAvatar(
+                    radius: 22,
+                  ),
+                  Icon(
+                    FontAwesomeIcons.solidCircle,
+                    color: Colors.green,
+                    size: 15,
+                  ),
+                ],
+              ),
+              title: Text(
+                "Abel Carrasco",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text("abel.carrasoco.5070"),
+              trailing: Icon(
+                FontAwesomeIcons.exclamationCircle,
+                color: Colors.black,
+              ),
+            ),
+            ListTile(
+              leading: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  CircleAvatar(
+                    radius: 22,
+                  ),
+                  Icon(
+                    FontAwesomeIcons.solidCircle,
+                    color: Colors.green,
+                    size: 15,
+                  ),
+                ],
+              ),
+              title: Text(
+                "Abel Carrasco",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text("abel.carrasoco.5070"),
+              trailing: Icon(
+                FontAwesomeIcons.exclamationCircle,
+                color: Colors.black,
+              ),
+            ),
+            ListTile(
+              leading: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  CircleAvatar(
+                    radius: 22,
+                  ),
+                  Icon(
+                    FontAwesomeIcons.solidCircle,
+                    color: Colors.green,
+                    size: 15,
+                  ),
+                ],
+              ),
+              title: Text(
+                "Abel Carrasco",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text("abel.carrasoco.5070"),
+              trailing: Icon(
+                FontAwesomeIcons.exclamationCircle,
+                color: Colors.black,
+              ),
+            ),
+            ListTile(
+              leading: Stack(
+                alignment: Alignment.bottomRight,
+                children: [
+                  CircleAvatar(
+                    radius: 22,
+                  ),
+                  Icon(
+                    FontAwesomeIcons.solidCircle,
+                    color: Colors.green,
+                    size: 15,
+                  ),
+                ],
+              ),
+              title: Text(
+                "Abel Carrasco",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text("abel.carrasoco.5070"),
+              trailing: Icon(
+                FontAwesomeIcons.exclamationCircle,
+                color: Colors.black,
+              ),
+            ),
+          ],
+        ),
       ),
-      
     );
   }
 }
