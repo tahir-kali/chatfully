@@ -13,12 +13,15 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  String hintUsername = "Username";
+  String hintPassword = "Password";
   
   @override
   Widget build(BuildContext context) {
       SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: appColor,
+      backgroundColor: Color(0xff00C7CE),
       body: ListView(
         children: <Widget>[
 
@@ -48,7 +51,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 
                 
-                hintText: "Username",
+                //hintText: "Username",
+                labelText: "Username",
+                labelStyle: GoogleFonts.lato(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 18,
+                  
+                  color: Colors.white
+                ),
+
                 
                                  focusedBorder: InputBorder.none,
                                  
@@ -77,7 +88,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 border: OutlineInputBorder(
                   
                 ),
-                hintText: "Password",
+                 labelText: "Password",
+                labelStyle: GoogleFonts.lato(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 18,
+                  
+                  color: Colors.white
+                ),
                  focusedBorder: InputBorder.none,
         
                 hintStyle: GoogleFonts.lato(

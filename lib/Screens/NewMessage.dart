@@ -19,6 +19,21 @@ class _NewMessageState extends State<NewMessage> {
     return Scaffold(
       backgroundColor: Color(0xffDDE5E5),
         appBar: AppBar(
+          actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundColor: Color(0xff90EE90),
+              radius: 15,
+              child: Text(
+                "3",
+                style: GoogleFonts.lato(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          )
+        ],
         title: Text(
           "New Message",
           style: GoogleFonts.lato(color: Colors.white),
@@ -97,7 +112,7 @@ class _NewMessageState extends State<NewMessage> {
               horizontal: 15
             ),
             child: Container(
-              height: SizeConfig.blockSizeVertical * 8,
+              height: SizeConfig.blockSizeVertical * 7.5,
 
               decoration: BoxDecoration(
                 color: Colors.white,

@@ -1,5 +1,6 @@
 import 'package:chatfully/Screens/ChatPerson.dart';
 import 'package:chatfully/Screens/Filters.dart';
+import 'package:chatfully/Screens/NewMessage.dart';
 import 'package:chatfully/Screens/Notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -45,7 +46,7 @@ class _ChatScreenState extends State<ChatScreen> {
         backgroundColor: appColor,
       ),
       drawer: Drawer(
-        child: ListView(
+        child: Column(
           children: <Widget>[
             Container(
               height: SizeConfig.blockSizeVertical * 30,
@@ -97,7 +98,7 @@ class _ChatScreenState extends State<ChatScreen> {
               ),
             ),
             SizedBox(
-              height: 300,
+              height: SizeConfig.blockSizeVertical * 42,
             ),
             ListTile(
               title: Text(
@@ -123,10 +124,20 @@ class _ChatScreenState extends State<ChatScreen> {
                       fontWeight: FontWeight.w700,
                       fontSize: 25),
                 ),
-                Icon(
-                  Icons.add_circle_outline,
-                  color: Colors.white,
-                  size: 35,
+                GestureDetector(
+                  onTap: (){
+                       Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => NewMessage()),
+  );
+
+
+                  },
+                                  child: Icon(
+                    Icons.add_circle_outline,
+                    color: Colors.white,
+                    size: 35,
+                  ),
                 )
               ],
             ),

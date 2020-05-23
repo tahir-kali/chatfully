@@ -52,7 +52,7 @@ class _FiltersState extends State<Filters> {
                         Text(
                           "Open",
                           style: GoogleFonts.lato(
-                              fontWeight: FontWeight.w500, fontSize: 16, color: Color(0xff676767) ),
+                              fontWeight: FontWeight.w500, fontSize: SizeConfig.blockSizeVertical * 2 , color: Color(0xff676767) ),
                         ),
                         Icon(Icons.arrow_drop_down)
                       ],
@@ -92,7 +92,7 @@ class _FiltersState extends State<Filters> {
                           Text(
                             "Partnerships",
                             style: GoogleFonts.lato(
-                                fontWeight: FontWeight.w500, fontSize: 16, color: Color(0xff676767)),
+                                fontWeight: FontWeight.w500, fontSize:SizeConfig.blockSizeVertical * 2 , color: Color(0xff676767)),
                           ),
                          
                         ],
@@ -123,7 +123,7 @@ class _FiltersState extends State<Filters> {
                           Text(
                             "Marketing",
                             style: GoogleFonts.lato(
-                                fontWeight: FontWeight.w500, fontSize: 16, color: Colors.white),
+                                fontWeight: FontWeight.w500, fontSize: SizeConfig.blockSizeVertical * 2 , color: Colors.white),
                           ),
                          
                         ],
@@ -154,7 +154,7 @@ class _FiltersState extends State<Filters> {
                           Text(
                             "Sales",
                             style: GoogleFonts.lato(
-                                fontWeight: FontWeight.w500, fontSize: 16, color: Colors.white),
+                                fontWeight: FontWeight.w500, fontSize: SizeConfig.blockSizeVertical * 2 , color: Colors.white),
                           ),
                          
                         ],
@@ -186,7 +186,7 @@ class _FiltersState extends State<Filters> {
                             child: Text(
                               "Customer Success",
                               style: GoogleFonts.lato(
-                                  fontWeight: FontWeight.w500, fontSize: 16, color: Color(0xff676767)),
+                                  fontWeight: FontWeight.w500, fontSize: SizeConfig.blockSizeVertical * 2 , color: Color(0xff676767)),
                             ),
                           ),
                          

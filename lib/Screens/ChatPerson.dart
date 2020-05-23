@@ -16,7 +16,7 @@ class _MessageState extends State<Message> {
     return Scaffold(
       backgroundColor: Color(0xffdee5e5),
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios),
+        
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -42,7 +42,7 @@ class _MessageState extends State<Message> {
       body: Column(
         children: <Widget>[
           Expanded(
-            flex: 11,
+            flex: 7,
             child: SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -95,7 +95,7 @@ class _MessageState extends State<Message> {
                     elevation: 5.0,
                     clipBehavior: Clip.antiAlias,
                     child: Container(
-                      width: SizeConfig.blockSizeVertical * 41,
+                      width: SizeConfig.blockSizeHorizontal * 74,
                       height: 50,
                       color: Colors.white,
                       child: Padding(
@@ -210,12 +210,23 @@ class Sender extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
-          Text(
-            '17h',
-            style: TextStyle(
-              fontSize: 11,
-              color: Colors.grey,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              CircleAvatar(
+                radius: 7,
+              ),
+              SizedBox(
+                width: SizeConfig.safeBlockHorizontal * 1.5,
+              ),
+              Text(
+                '17h',
+                style: TextStyle(
+                  fontSize: 11,
+                  color: Colors.grey,
+                ),
+              ),
+            ],
           )
         ],
       ),
