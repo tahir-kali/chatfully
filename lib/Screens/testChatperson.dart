@@ -1,49 +1,77 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:developer';
-
 import 'package:chatfully/Model/MessageViewModel.dart';
+import 'package:chatfully/Model/NewMessageSearchModel.dart';
 import 'package:chatfully/size.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 
 import '../Global.dart';
 import '../colors.dart';
 
-class Message extends StatefulWidget {
+class TestChat extends StatefulWidget {
   @override
   _MessageState createState() => _MessageState();
 }
 
-class _MessageState extends State<Message> {
+class _MessageState extends State<TestChat> {
   Radius radius = Radius.circular(10);
   var text;
+  var error;
   var _controller = TextEditingController();
   ScrollController _scrollController = new ScrollController();
-  getChatMessage(String messages) async {
-    var oc = message.oc;
-    var tc = message.tc;
+  makenewChat() async {
+    var contact = Provider.of<NewMessageSearchModel>(context, listen: false);
     var jsonData;
-
-    MessageViewModel gamer = MessageViewModel.from();
-    gamer.s = currentUser.uid;
-    gamer.b = messages != null ? messages : null;
-
-    setState(() {
-      currentMessages.messages.add(gamer);
-    });
-    _scrollController.jumpTo(_scrollController.position.maxScrollExtent + 100);
-    var url =
-        "https://api.chatfully.io/mobile/v1/send?s=$userData&oc=$oc&tc=$tc&b=$messages";
-    var encoded = Uri.encodeFull(url);
-    var decoded = Uri.decodeFull(encoded).toString();
-    var request = await http.get(decoded);
+    var coc = contact.roc();
+    var ctc = contact.rtc();
+    Map<String, String> requestHeaders = {'s': "$userData"};
+    var request = await http.get(
+        "https://api.chatfully.io/mobile/v1/newchat?s=$userData&oc=$coc&tc=$ctc");
     if (request.statusCode == 200) {
       jsonData = json.decode(request.body);
-      if (jsonData["ok"] == true) {
-        setState(() {});
+      print(userData);
+      if (jsonData["ok"] == true) {}
+    }
+  }
+
+  getChatMessage(String messages, context) async {
+    try {
+      var contact = Provider.of<NewMessageSearchModel>(context, listen: false);
+      var oc = contact.roc();
+      var tc = contact.rtc();
+      var jsonData;
+
+      MessageViewModel gamer = MessageViewModel.from();
+      gamer.s = currentUser.uid;
+      gamer.b = messages;
+
+      setState(() {
+        currentMessages.messages.add(gamer);
+      });
+      _scrollController
+          .jumpTo(_scrollController.position.maxScrollExtent + 100);
+      var url =
+          "https://api.chatfully.io/mobile/v1/send?s=$userData&oc=$oc&tc=$tc&b=$messages";
+
+      var encoded = Uri.encodeFull(url);
+      var decoded = Uri.decodeFull(encoded).toString();
+      var request = await http.get(decoded);
+      if (request.statusCode == 200) {
+        jsonData = json.decode(request.body);
+
+        if (jsonData["ok"] == true) {
+          setState(() {
+            this.error = 'Already sent the message';
+          });
+        }
       }
+    } catch (e) {
+      setState(() {
+        error = e.toString();
+      });
     }
   }
 
@@ -52,6 +80,7 @@ class _MessageState extends State<Message> {
     print(message.b);
     print("current user is");
     print(currentUser.uid);
+
     if (message.s != null) {
       return Sender(
           message: message.b != null ? message.b : "", radius: radius);
@@ -66,6 +95,8 @@ class _MessageState extends State<Message> {
     // TODO: implement initState
     isChatScreenOpen = true;
     super.initState();
+    makenewChat();
+
     Future.delayed(Duration(milliseconds: 100), () {
       _scrollController.jumpTo(1000000);
       setState(() {});
@@ -74,26 +105,28 @@ class _MessageState extends State<Message> {
 
   @override
   Widget build(BuildContext context) {
+    var contact = Provider.of<NewMessageSearchModel>(context, listen: false);
+
     return Scaffold(
       backgroundColor: Color(0xffdee5e5),
       appBar: AppBar(
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.all(8.0),
-            // child: CircleAvatar(
-            //   backgroundColor: Color(0xff90EE90),
-            //   radius: 15,
-            //   child: Text(
-            //     "3",
-            //     style: GoogleFonts.lato(
-            //       color: Colors.white,
-            //     ),
-            //   ),
-            // ),
+            child: CircleAvatar(
+              backgroundColor: Color(0xff90EE90),
+              radius: 15,
+              child: Text(
+                "3",
+                style: GoogleFonts.lato(
+                  color: Colors.white,
+                ),
+              ),
+            ),
           )
         ],
         title: Text(
-          message != null ? message.n : "",
+          contact.rl() ?? "New Person",
           style: GoogleFonts.lato(
               color: Colors.white, fontWeight: FontWeight.w600),
         ),
@@ -101,6 +134,7 @@ class _MessageState extends State<Message> {
       ),
       body: Column(
         children: <Widget>[
+          Text(error.toString()),
           Expanded(
             flex: 7,
             child: Padding(
@@ -109,7 +143,9 @@ class _MessageState extends State<Message> {
                     controller: _scrollController,
                     reverse: false,
                     shrinkWrap: false,
-                    itemCount: currentMessages.messages.length,
+                    itemCount: currentMessages != null
+                        ? currentMessages.messages.length
+                        : 0,
                     itemBuilder: (BuildContext context, int index) {
                       return Container(
                         child:
@@ -154,7 +190,7 @@ class _MessageState extends State<Message> {
                         child: IconButton(
                             icon: Icon(Icons.send),
                             onPressed: () {
-                              this.getChatMessage(this.text);
+                              this.getChatMessage(this.text, context);
                               this._controller.clear();
                             }),
                       ),
@@ -201,7 +237,9 @@ class Reciever extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(10),
                     child: Text(
-                      Uri.decodeFull(message).toString(),
+                      message != null
+                          ? Uri.decodeFull(message).toString()
+                          : "No new message",
                       style: TextStyle(
                         fontSize: 14,
                       ),
@@ -260,7 +298,9 @@ class Sender extends StatelessWidget {
                     padding: EdgeInsets.only(
                         top: 10, bottom: 10, right: 20, left: 20),
                     child: Text(
-                      Uri.decodeFull(message).toString(),
+                      message != null
+                          ? Uri.decodeFull(message).toString()
+                          : "No new received messages",
                       style: TextStyle(
                         fontSize: 14,
                       ),

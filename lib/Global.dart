@@ -1,0 +1,23 @@
+import 'package:chatfully/Model/ChatListViewModel.dart';
+import 'package:chatfully/Model/MessageChatViewModel.dart';
+import 'package:chatfully/Model/MessagesViewModel.dart';
+import 'package:chatfully/Model/UserViewModel.dart';
+import 'package:flutter/material.dart';
+import 'Model/MessageListViewModel.dart';
+
+var userData = "";
+var currentUser = UserViewModel.name();
+var chatList = ChatListViewModel.from();
+var messageList = MessageListViewModel.from();
+bool loading = false;
+var id = "";
+var fcmToken = "";
+var currentFilter = "";
+List<String> filterList = new List();
+var filterList2 = Map<String, String>();
+MessageChatViewModel message;
+MessagesViewModel currentMessages;
+List<String> list = List();
+var isNotification = false;
+var currentNotiUser1 = "";
+var isChatScreenOpen = false;

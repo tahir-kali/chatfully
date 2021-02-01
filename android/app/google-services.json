@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "275643494110",
+    "firebase_url": "https://chatfullypushnotifications.firebaseio.com",
+    "project_id": "chatfullypushnotifications",
+    "storage_bucket": "chatfullypushnotifications.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275643494110:android:6a46890b7c1022a6d25c4f",
+        "android_client_info": {
+          "package_name": "com.example.chatfully"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "275643494110-0qp8vetnhhpcu51d6b91019ndh9nnekq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCdOSTpPRjNKlp-F_aNRhoXLp2y8Jmv4Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "275643494110-0qp8vetnhhpcu51d6b91019ndh9nnekq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
